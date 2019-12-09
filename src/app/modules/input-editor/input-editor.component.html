@@ -1,0 +1,11 @@
+<h2>Editor input example</h2>
+<st-editor-input class="editor-input"
+  [formControl]="formControl"
+  [label]="'Input name'"
+  [required]="true"
+  [maxLength]="3"
+  [language]="'json'"></st-editor-input>
+
+{{formControl.valid}}
+
+<st-textarea label="Input name" class="st-form-field"></st-textarea>

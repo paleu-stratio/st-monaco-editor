@@ -1,0 +1,15 @@
+{
+  "extends": "../../tslint.json",
+  "rules": {
+    "directive-selector": [
+      true,
+      "st",
+      "lib"
+    ],
+    "component-selector": [
+      true,
+      "st",
+      "lib"
+    ]
+  }
+}

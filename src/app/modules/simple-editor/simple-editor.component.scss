@@ -1,0 +1,26 @@
+.editor-example {
+  height: calc(100vh - 200px);
+}
+
+select {
+  margin: 20px 0;
+  margin-right: 30px;
+}
+
+.option {
+  display: inline-block;
+  vertical-align: top;
+
+  &__label {
+    float: left;
+    margin-top: 28px;
+    margin-right: 10px;
+  }
+
+  &__checkbox {
+    display: inline-block;
+    margin-top: 27px;
+  }
+}
+
+

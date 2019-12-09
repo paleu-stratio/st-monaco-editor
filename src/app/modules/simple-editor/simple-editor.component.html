@@ -1,0 +1,34 @@
+<h2>Simple Editor example</h2>
+
+<div class="option">
+  <label class="option__label" for="language">Language</label>
+  <select id="language" [formControl]="languageControl">
+    <option [attr.selected]="item.key === languageControl.value || null" *ngFor="let item of initCodes | keyvalue">{{item.key}}</option>
+  </select>
+</div>
+
+<div class="option">
+  <label class="option__label" for="language">Theme</label>
+  <select id="theme" [formControl]="themeControl">
+    <option [attr.selected]="item.key === themeControl.value || null" *ngFor="let item of themes | keyvalue">{{item.key}}</option>
+  </select>
+</div>
+
+<div class="option">
+  <label class="option__label" for="language">Show minimap</label>
+  <st-checkbox class="option__checkbox" [formControl]="minimapControl"></st-checkbox>
+</div>
+
+<div class="option">
+  <label class="option__label" for="language">Readonly</label>
+  <st-checkbox class="option__checkbox" [formControl]="readonlyControl"></st-checkbox>
+</div>
+
+<st-monaco-editor class="editor-example"
+  [config]="config"
+  [language]="languageControl.value"
+  [minimapEnabled]="minimapControl.value"
+  [theme]="themeControl.value"
+  [readonly]="readonlyControl.value"
+  [(code)]="initCodes[languageControl.value]"></st-monaco-editor>
+

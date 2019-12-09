@@ -1,0 +1,21 @@
+:host {
+  display: block;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app {
+  flex: 1;
+  overflow: auto;
+
+  .container {
+    height: 100%;
+  }
+
+  &__container {
+    height: 100%;
+    width: 100%;
+
+  }
+}

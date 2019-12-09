@@ -1,0 +1,80 @@
+@import '~@stratio/egeo/theme/constants';
+
+:host {
+  width: 100%;
+  display: block;
+  resize: vertical;
+}
+
+.st-editor {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 140px;
+
+  &__container {
+    border: 1px solid var(--st-editor_-_border-color,  $neutral-07);
+    font-weight: 400;
+    border-radius: 4px;
+    vertical-align: bottom;
+    box-sizing: border-box;
+    padding-right: 1px;
+    width: 100%;
+    flex: 1;
+    position: relative;
+    height: 100%;
+    padding-bottom: 1px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__monaco {
+    flex: 1;
+  }
+
+  &__label {
+    font-weight: var(--st-editor_-_label-font-weight, 400);
+    font-size: var(--st-editor_-_label-font-size, 0.875rem);
+    color: var(--st-editor_-_label-color, $neutral-10);
+    margin-bottom: var(--st-editor_-_label-margin-bottom, 5px);
+  }
+
+  &--error & {
+    &__container {
+      border-color: var(--st-editor_-_border-color--error, $status-critical-default)
+    }
+
+    &__label {
+      color: var(--st-editor_-_label-color--error, $status-critical-default)
+    }
+  }
+
+  &--active & {
+    &__container {
+      border-color: var(--st-editor_-_border-color--focus, $input-field-onfocus)
+    }
+
+    &__label {
+      color: var(--st-editor_-_label-color--focus, $action-primary-default)
+    }
+  }
+
+  &__monaco {
+    width: 100%;
+    height: 100%;
+  }
+
+}
+
+.resize-icon {
+  position: absolute;
+  overflow: hidden;
+  resize: vertical;
+  bottom: 0;
+  right: 0;
+  height: 10px;
+  width: 10px;
+  max-height: 10px;
+  min-height: 10px;
+  pointer-events: none;
+}

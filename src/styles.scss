@@ -1,0 +1,31 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '~@stratio/egeo/theme/sanitize';
+@import '~@stratio/egeo/theme/grid.css';
+@import '~@stratio/egeo/theme/theme.css';
+@import '~@stratio/egeo/theme/constants';
+
+body {
+  font-family: Nunito Sans;
+}
+
+h2 {
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  font-weight: 100;
+}
+
+select {
+  font-weight: 400;
+  font-size: 0.938rem;
+  line-height: 1.25rem;
+  color: #0f1b27;
+  background-color: #ffffff;
+  border: 1px solid #b5b5b5;
+  padding: 10px 17px 10px 15px;
+  border-radius: 4px;
+  vertical-align: bottom;
+  appearance: menuList;
+  outline: none;
+  height: 40px;
+}

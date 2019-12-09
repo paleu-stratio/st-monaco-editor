@@ -1,0 +1,22 @@
+<div class="st-editor" [ngClass]="{
+  'st-editor--active': focus,
+  'st-editor--disabled': isDisabled,
+  'st-editor--error': hasErrors
+  }">
+  <label st-label
+    class="st-editor__label"
+    [attr.for]="name">{{label}}</label>
+  <div class="st-editor__container" #editorElement>
+    <st-monaco-editor class="st-editor__monaco"
+      [attr.id]="qaTag"
+      class="st-editor__monaco"
+      [config]="monacoConfig"
+      [code]="code"
+      (changeFocus)="changeFocus($event)"
+      (codeChange)="codeChange($event)"></st-monaco-editor>
+    <div class="resize-icon" #scrollElement *ngIf="resizable" (mousedown)="onResize($event)" #resizeElement></div>
+  </div>
+  <div class="st-input-error-layout" *ngIf="!focus && errorMessage && errorMessage.length">
+    <span class="st-input-error-message">{{errorMessage}}</span>
+  </div>
+</div>
