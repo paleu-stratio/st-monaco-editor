@@ -1,11 +1,13 @@
 {
-  "name": "st-monaco-editor",
-  "version": "0.0.0",
+  "name": "@stratio/st-monaco-editor",
+  "version": "",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --project=st-editor",
-    "test": "ng test",
+    "package": "npm run build",
+    "deploy": "npm publish './dist/st-editor'",
+    "test": "echo 'test'",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },

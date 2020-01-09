@@ -1,6 +1,6 @@
 {
-  "name": "st-editor",
-  "version": "0.0.1",
+  "name": "@stratio/st-monaco-editor",
+  "version": "",
   "peerDependencies": {
     "@angular/common": "^8.2.14",
     "@angular/core": "^8.2.14",
