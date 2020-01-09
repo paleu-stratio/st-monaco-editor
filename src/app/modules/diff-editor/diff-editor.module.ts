@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DiffEditorComponent } from './diff-editor.component';
-import { StMonacoEditorModule } from '@stratio/st-editor';
+import { StMonacoEditorModule } from '@stratio/st-monaco-editor';
 
 @NgModule({
   declarations: [DiffEditorComponent],

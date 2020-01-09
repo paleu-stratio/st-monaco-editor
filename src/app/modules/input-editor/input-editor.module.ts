@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { InputEditorComponent } from './input-editor.component';
-import { StMonacoEditorModule } from '@stratio/st-editor';
+import { StMonacoEditorModule } from '@stratio/st-monaco-editor';
 import { StTextareaModule } from '@stratio/egeo';
 
 @NgModule({

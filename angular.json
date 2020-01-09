@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "st-editor": {
+    "st-monaco-editor": {
       "projectType": "library",
       "root": "projects/st-editor",
       "sourceRoot": "projects/st-editor/src",

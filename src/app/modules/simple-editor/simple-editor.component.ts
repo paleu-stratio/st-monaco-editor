@@ -1,7 +1,7 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { tsExample, cssExample, sqlExample } from './simple-editor.models';
-import { StEditorThemes } from '@stratio/st-editor';
+import { StEditorThemes } from '@stratio/st-monaco-editor';
 
 @Component({
   selector: 'app-simple-editor',

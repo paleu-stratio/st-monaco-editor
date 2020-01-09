@@ -15,7 +15,7 @@
       "node_modules/@types"
     ],
     "paths": {
-      "@stratio/st-editor": ["projects/st-editor/src/public-api.ts"] // This mapping is relative to "baseUrl"
+      "@stratio/st-monaco-editor": ["projects/st-editor/src/public-api.ts"] // This mapping is relative to "baseUrl"
     },
     "lib": [
       "es2018",

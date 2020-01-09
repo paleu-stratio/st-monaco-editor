@@ -4,9 +4,9 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --project=st-editor",
+    "build": "ng build --project=st-monaco-editor",
     "package": "npm run build",
-    "deploy": "npm publish './dist/st-editor'",
+    "deploy": "npm publish './dist/st-monaco-editor'",
     "test": "echo 'test'",
     "lint": "ng lint",
     "e2e": "ng e2e"
