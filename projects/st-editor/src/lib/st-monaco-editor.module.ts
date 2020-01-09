@@ -10,13 +10,13 @@
  * written authorization from Stratio Big Data Inc., Sucursal en España.
  */
 
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ModuleWithProviders } from '@angular/core';
 
 import { StMonacoEditorComponent } from './st-editor/st-monaco-editor.component';
 import { StMonacoDiffEditorComponent } from './st-diff-editor/st-monaco-diff-editor.component';
 import { StEditorInputComponent } from './st-editor-input/st-editor-input.component';
 import { StMonacoEditorConfig, ST_MONACO_EDITOR_CONFIG } from './st-monaco-editor.config';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -25,7 +25,7 @@ import { StMonacoEditorConfig, ST_MONACO_EDITOR_CONFIG } from './st-monaco-edito
     StEditorInputComponent
   ],
   imports: [
-    BrowserModule
+    CommonModule
   ],
   exports: [
     StMonacoEditorComponent,
