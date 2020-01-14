@@ -13,6 +13,8 @@
       [config]="monacoConfig"
       [code]="code"
       (changeFocus)="changeFocus($event)"
+      [readonly]="readonly || isDisabled"
+      [theme]="theme"
       (codeChange)="codeChange($event)"></st-monaco-editor>
     <div class="resize-icon" #scrollElement *ngIf="resizable" (mousedown)="onResize($event)" #resizeElement></div>
   </div>

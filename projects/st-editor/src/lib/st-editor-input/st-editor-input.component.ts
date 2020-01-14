@@ -22,6 +22,7 @@ import {
   EventEmitter,
   OnChanges,
   ChangeDetectorRef,
+  SimpleChanges,
 } from '@angular/core';
 import {
   ControlValueAccessor,
@@ -31,7 +32,7 @@ import {
   ValidationErrors,
   FormControl,
 } from '@angular/forms';
-import { IEditorConstructionOptions } from '../models/editor';
+import { IEditorConstructionOptions, StEditorThemes } from '../models/editor';
 import { DOCUMENT } from '@angular/common';
 
 @Component({
@@ -53,7 +54,7 @@ import { DOCUMENT } from '@angular/common';
   ]
 })
 export class StEditorInputComponent implements OnChanges, ControlValueAccessor, Validator {
-   /** @Input {boolean} [thin] Option for a thinner header and an arrow marker under active option */
+  /** @Input {boolean} [thin] Option for a thinner header and an arrow marker under active option */
   @Input() language: string;
   @Input() label: string;
   @Input() contextualHelp: string;
@@ -65,6 +66,9 @@ export class StEditorInputComponent implements OnChanges, ControlValueAccessor, 
   @Input() isFocused = false;
   @Input() errorMessages: { [errorName: string]: string } = {};
   @Input() resizable = true;
+  @Input() readonly = false;
+  @Input() value: string;
+  @Input() theme: StEditorThemes = StEditorThemes.vs;
 
   @Output() blur: EventEmitter<void> = new EventEmitter<void>();
 
@@ -93,12 +97,18 @@ export class StEditorInputComponent implements OnChanges, ControlValueAccessor, 
     this._onRelease = this._onRelease.bind(this);
   }
 
-  ngOnChanges(): void {
-    this.monacoConfig = {
-      language: this.language,
-      automaticLayout: true,
-      lineNumbersMinChars: 2
-    };
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes.value) {
+      this.code = this.value;
+    }
+
+    if (changes.language) {
+      this.monacoConfig = {
+        language: this.language,
+        automaticLayout: true,
+        lineNumbersMinChars: 2
+      };
+    }
   }
 
   public codeChange(value: string) {
@@ -138,7 +148,7 @@ export class StEditorInputComponent implements OnChanges, ControlValueAccessor, 
     }
   }
 
-  validate(control: FormControl): ValidationErrors {
+  public validate(control: FormControl): ValidationErrors {
     setTimeout(() => this._getErrorMessage(control.errors));
     if (this.maxLength && control.value.length > this.maxLength) {
       return {
