@@ -116,7 +116,8 @@ export class StEditorInputComponent implements OnChanges, ControlValueAccessor, 
   }
 
   public writeValue(value: string): void {
-    this.code = value;
+    const _value = value === null ? '' : value;
+    this.code = _value;
   }
 
   // Registry the change function to propagate internal model changes
@@ -150,13 +151,13 @@ export class StEditorInputComponent implements OnChanges, ControlValueAccessor, 
 
   public validate(control: FormControl): ValidationErrors {
     setTimeout(() => this._getErrorMessage(control.errors));
-    if (this.maxLength && control.value.length > this.maxLength) {
+    if (this.maxLength && control.value && control.value.length > this.maxLength) {
       return {
         maxLength: true
       };
     }
 
-    if (this.minLength && control.value.length < this.minLength) {
+    if (this.minLength && control.value && control.value.length < this.minLength) {
       return {
         minLength: true
       };

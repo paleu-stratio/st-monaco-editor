@@ -49,8 +49,6 @@ export class StMonacoEditorComponent extends EditorBase implements OnChanges, On
 
   private _codeEditorInstance: monaco.editor.IStandaloneCodeEditor;
 
-  public codeValue: string;
-
   constructor(
     protected _elementRef: ElementRef,
     @Optional()
@@ -66,10 +64,9 @@ export class StMonacoEditorComponent extends EditorBase implements OnChanges, On
 
       // if only change the code input field, updates value
       if (changes.code && Object.keys(changes).length === 1) {
-
         // prevents repaint on double binding
-        if (this.code !== this.codeValue) {
-          this.codeValue = this.code;
+        if (this.code !== null || this.code !== undefined) {
+          this._codeEditorInstance.setValue(this.code);
         }
 
         // Restart monaco editor with the updated config
@@ -101,8 +98,6 @@ export class StMonacoEditorComponent extends EditorBase implements OnChanges, On
       ...this.config
     };
 
-    this.codeValue = this.code;
-
     if (this._codeEditorInstance) {
       this._codeEditorInstance.dispose();
     }
@@ -114,7 +109,6 @@ export class StMonacoEditorComponent extends EditorBase implements OnChanges, On
       this._codeEditorInstance.getModel().onDidChangeContent(e => {
         const value = this._codeEditorInstance.getValue();
         this._ngZone.run(() => {
-          this.codeValue = value;
           this.codeChange.emit(value);
         });
       });

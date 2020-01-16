@@ -1,11 +1,18 @@
-<h2>Editor input example</h2>
-<st-editor-input class="editor-input"
-  [formControl]="formControl"
-  [label]="'Input name'"
-  [required]="true"
-  [maxLength]="3"
-  [language]="'json'"></st-editor-input>
+<article>
+  <h2>Editor input example</h2>
+  <st-editor-input class="editor-input"
+    [formControl]="formControl"
+    [label]="'Input name'"
+    [required]="true"
+    [maxLength]="3"
+    [language]="'json'"></st-editor-input>
+    <section class="editor-input__buttons">
+      <button (click)="setValue()" class="button button-link-primary" >Set template value</button>
+      <button (click)="reset()" class="button button-link-primary" >Reset values</button>
+    </section>
 
-{{formControl.valid}}
 
-<st-textarea label="Input name" class="st-form-field"></st-textarea>
+  {{formControl.valid}}
+
+  <st-textarea label="Input name" class="st-form-field"></st-textarea>
+</article>

@@ -1,3 +1,12 @@
 .editor-example {
   height: calc(100vh - 200px);
 }
+
+.editor-input {
+
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+
+}
